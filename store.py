@@ -36,7 +36,7 @@ def save(data):
     ms = data["members"]
     for i, m in enumerate(ms):
         out.append('    {')
-        for k in ("id", "name", "tier", "paid", "credit", "issued", "expires"):
+        for k in ("id", "tier", "paid", "credit", "issued", "expires"):
             out.append(f'      "{k}": {j(m[k])},')
         if m.get("receipt"):
             out.append(f'      "receipt": {j(m["receipt"])},')

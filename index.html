@@ -116,7 +116,7 @@ body{padding-bottom:env(safe-area-inset-bottom)}
         <div class="row"><img class="logo" alt="Mei Yuan" src="assets/mei-yuan-wordmark.png"><div class="tag">GOLD MEMBERSHIP</div></div>
         <div class="amt" id="f-bal"></div><div class="amt-l">BALANCE LEFT</div>
         <div class="rule"></div>
-        <div class="row"><div><div class="name" id="f-name"></div><div class="num" id="f-num"></div></div>
+        <div class="row"><div><div class="name" id="f-num"></div></div>
           <div class="r"><div class="lbl">Valid to</div><div class="val" id="f-exp"></div></div></div>
       </div></div>
       <div class="face back"><div class="in">
@@ -188,7 +188,7 @@ body{padding-bottom:env(safe-area-inset-bottom)}
     const expired = today > m.expires;
     $('sub').textContent = rm(m.paid) + ' membership · ' + rm(m.credit) + ' credit';
     $('f-bal').textContent = rm(left);
-    $('f-name').textContent = m.name.toUpperCase(); $('f-num').textContent = m.id;
+    $('f-num').textContent = m.id;
     $('f-exp').textContent = fmt(m.expires); $('b-iss').textContent = fmt(m.issued); $('b-exp').textContent = fmt(m.expires);
     $('bal').innerHTML = '<small></small>' + rm(left);
     $('of').innerHTML = 'of ' + rm(m.credit) + '<br>' + rm(used) + ' used';
@@ -207,7 +207,7 @@ body{padding-bottom:env(safe-area-inset-bottom)}
       'Show your card or link when you pay.'
     ].map(t => '<li>' + t + '</li>').join('');
     if (m.receipt) fetch(m.receipt, {method: 'HEAD', cache: 'no-cache'}).then(r => { if (r.ok) { $('rcpt').href = m.receipt; $('rcpt').hidden = false; } }).catch(() => {});
-    document.title = m.name + ' · Gold Membership · Mei Yuan';
+    document.title = (m.id || id) + ' · Gold Membership · Mei Yuan';
     $('app').hidden = false;
   }).catch(() => msg('Can’t load your card', 'Check your internet and try again, or WhatsApp us.'));
 

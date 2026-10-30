@@ -30,7 +30,7 @@ Example with two visits:
 
 ## Add a member
 Copy a whole member block (from `{` to `}`), paste it after the last member, and put a comma between the two blocks. Change:
-- `id` (e.g. MY-G5083), `name`, `issued`, `expires` (2 years later)
+- `id` (e.g. MY-G5083, the member number is the only identity, no name), `issued`, `expires` (2 years later)
 - Gold 600: `"tier": "Gold 600", "paid": 600, "credit": 620`
 - Gold 1000: `"tier": "Gold 1000", "paid": 1000, "credit": 1040`
 - `"visits": []` (empty for a new member)
@@ -49,7 +49,7 @@ python3 add_visit.py MY-G5083 2026-11-10 "Gel manicure" 80
 Both keep the one-visit-per-line format.
 
 ## Privacy
-Once on GitHub Pages, `members.json` is public to anyone who knows the address. Only keep name, dates, services and amounts there. No phone, IC or payment details.
+Once on GitHub Pages, `members.json` is public to anyone who knows the address. Only keep the member number, dates, services and amounts there. No phone, IC or payment details.
 
 ## Receipts
 Put the member's receipt PDF in the `receipts/` folder (for example `receipts/MY-G5833.pdf`), then add one line to that member's block in members.json:
