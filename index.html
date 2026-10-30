@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#041B45">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mei Yuan">
+<title>Gold Membership · Mei Yuan Khidmat Rias Kuku</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/favicon.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<style>
+@font-face{font-family:"Playfair Display";font-weight:500;src:url(fonts/playfair-display-latin-500-normal.ttf) format("truetype");font-display:swap}
+@font-face{font-family:"Cormorant Garamond";font-style:italic;font-weight:500;src:url(fonts/cormorant-garamond-latin-500-italic.ttf) format("truetype");font-display:swap}
+
+:root{--navy-d:#041B45;--navy:#0A347C;--gold:#F0B84F;--gold2:#EBC365;--gold-txt:#A47A2C;--ivory:#F8F5EF;--ink:#041B45;--body:#4B5571;--mute:#AFBAD3}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:Inter,"Noto Sans",system-ui,sans-serif;background:var(--ivory);color:var(--ink);min-height:100vh;-webkit-font-smoothing:antialiased}
+.wrap{max-width:440px;margin:0 auto;padding:28px 22px 40px}
+.top{display:flex;justify-content:space-between;gap:12px;white-space:nowrap;font-size:clamp(8px,2.4vw,10px);letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid var(--gold2);padding-bottom:10px}
+.top b{font-weight:600}.top span{color:var(--gold-txt)}
+.eyebrow{margin-top:30px;text-align:center;font-size:10px;font-weight:600;letter-spacing:.28em;color:var(--gold-txt);text-transform:uppercase}
+h1{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-size:clamp(34px,10vw,44px);text-align:center;line-height:1.1;margin-top:8px}
+.sub{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:clamp(22px,6.4vw,28px);color:var(--gold-txt);text-align:center;margin-top:2px}
+
+/* card */
+.stage{perspective:1400px;margin:30px auto 10px;width:100%;max-width:380px}
+.card{position:relative;width:100%;aspect-ratio:85.6/53.98;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.2,.7,.2,1);cursor:pointer;animation:float 6s ease-in-out infinite}
+.card.flipped{transform:rotateY(180deg)}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -6px}}
+.face{position:absolute;inset:0;border-radius:16px;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;
+  background:radial-gradient(120% 140% at 15% 0%,#0E3E8C 0%,var(--navy) 35%,var(--navy-d) 100%);
+  box-shadow:0 24px 40px -18px rgba(4,27,69,.55),0 6px 14px -6px rgba(4,27,69,.35),inset 0 0 0 1px rgba(235,195,101,.35);color:#fff}
+.face::before{content:"";position:absolute;inset:9px;border:1px solid rgba(235,195,101,.55);border-radius:10px;pointer-events:none}
+.face::after{content:"";position:absolute;inset:-50%;background:linear-gradient(105deg,transparent 42%,rgba(255,236,190,.0) 45%,rgba(255,236,190,.22) 50%,rgba(255,236,190,0) 55%,transparent 58%);transform:translateX(-60%);animation:shimmer 5.5s ease-in-out infinite;pointer-events:none}
+@keyframes shimmer{0%,55%{transform:translateX(-60%)}85%,100%{transform:translateX(60%)}}
+.back{transform:rotateY(180deg)}
+.in{position:absolute;inset:0;padding:7% 7.5%;display:flex;flex-direction:column}
+.row{display:flex;justify-content:space-between;align-items:flex-start}
+.logo{height:clamp(22px,7vw,30px)}
+.tag{font-size:clamp(7px,2.1vw,9px);letter-spacing:.24em;font-weight:600;color:var(--gold2);padding-top:6px}
+.amt{margin-top:auto;font-weight:600;font-size:clamp(26px,8.4vw,36px);letter-spacing:.01em;line-height:1}
+.amt-l{font-size:clamp(7px,2vw,9px);letter-spacing:.24em;color:var(--gold2);margin-top:5px}
+.rule{height:1px;background:linear-gradient(90deg,rgba(235,195,101,.2),rgba(235,195,101,.9),rgba(235,195,101,.2));margin:6% 0 4.5%}
+.name{font-weight:600;font-size:clamp(11px,3.4vw,14px);letter-spacing:.08em}
+.num{font-size:clamp(8px,2.5vw,10.5px);color:var(--mute);letter-spacing:.12em;margin-top:3px}
+.r{text-align:right}.lbl{font-size:clamp(6.5px,1.9vw,8px);letter-spacing:.22em;color:var(--gold2);text-transform:uppercase}
+.val{font-weight:600;font-size:clamp(10px,3vw,13px);margin-top:3px;letter-spacing:.04em}
+.sig{height:clamp(26px,8vw,34px);width:auto;max-width:55%;align-self:flex-start;display:block;margin-top:auto;object-fit:contain}
+.sigline{height:1px;background:rgba(235,195,101,.6);margin-top:2px;width:55%}
+.owner{font-size:clamp(9px,2.6vw,11px);font-weight:600;margin-top:5px}.owner small{display:block;font-weight:400;font-size:clamp(6.5px,1.9vw,8px);letter-spacing:.22em;color:var(--gold2);margin-top:2px}
+.shop{font-size:clamp(8px,2.4vw,10px);color:var(--mute);margin-top:5%}.shop b{color:#fff;font-weight:600}
+.hint{text-align:center;font-size:11px;color:var(--body);margin-top:14px;letter-spacing:.04em}
+.notfound{display:none;margin:18px auto 0;max-width:380px;text-align:center;font-size:13px;color:var(--body);border:1px solid rgba(235,195,101,.7);border-radius:12px;padding:12px 14px;background:#fff}
+.hint button{all:unset;cursor:pointer;color:var(--gold-txt);font-weight:600;border-bottom:1px solid var(--gold2)}
+
+/* info */
+.sec{margin-top:30px;border-top:1px solid rgba(235,195,101,.7);padding-top:20px}
+.k{font-size:10px;letter-spacing:.24em;font-weight:600;color:var(--gold-txt);text-transform:uppercase;margin-bottom:8px}
+p,li{font-size:14px;line-height:1.6;color:var(--body)}
+.strong{color:var(--ink);font-weight:600}
+.wa{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:22px;background:var(--navy-d);color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:15px 18px;border-radius:999px;box-shadow:inset 0 0 0 1px rgba(235,195,101,.6)}
+.rcpt{display:block;margin-top:22px;text-align:center;text-decoration:none;color:var(--navy-d);font-weight:600;font-size:15px;padding:14px 18px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1px rgba(235,195,101,.9)}
+.rcpt:active{transform:scale(.98)}
+.rcpt[hidden]{display:none}
+.wa svg{width:20px;height:20px;fill:var(--gold2)}
+.wa:active{transform:scale(.98)}
+.grid{display:grid;grid-template-columns:1.7fr 1fr;gap:16px}
+ul{list-style:none}li{padding-left:16px;position:relative;margin-bottom:6px}li::before{content:"";position:absolute;left:0;top:.7em;width:6px;height:1px;background:var(--gold-txt)}
+.thanks{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:24px;line-height:1.25;color:var(--ink);text-align:center;margin-top:34px}
+.foot{margin-top:28px;text-align:center;font-size:11px;color:var(--body);letter-spacing:.03em}
+@media (prefers-reduced-motion:reduce){.card,.face::after{animation:none}.card{transition:none}}
+
+body{padding-bottom:env(safe-area-inset-bottom)}
+.bal{margin-top:26px;background:#fff;border-radius:16px;padding:18px 20px;box-shadow:0 10px 24px -16px rgba(4,27,69,.4),inset 0 0 0 1px rgba(235,195,101,.7);display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:end}
+.bal .k{margin:0}
+.bal .big{font-weight:600;font-size:clamp(34px,10vw,42px);line-height:1;color:var(--ink);letter-spacing:-.01em}
+.bal .big small{font-size:.45em;letter-spacing:.06em;margin-right:4px;color:var(--gold-txt)}
+.bal .of{font-size:12px;color:var(--body);text-align:right;line-height:1.5}
+.bar{grid-column:1/-1;height:6px;border-radius:99px;background:#E9E3D4;overflow:hidden;margin-top:12px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold-txt),var(--gold));border-radius:99px;transition:width .8s ease}
+.exp{grid-column:1/-1;font-size:12px;color:var(--body);margin-top:8px}.exp b{color:var(--ink)}
+.exp.warn b{color:#9A3412}
+.v{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EDE7D8}
+.v:last-child{border-bottom:0}
+.v .d{font-size:11px;color:var(--body);letter-spacing:.04em}
+.v .s{font-size:14px;color:var(--ink);font-weight:600}
+.v .a{font-size:14px;font-weight:600;color:var(--ink);white-space:nowrap}
+.v .a::before{content:"− ";color:var(--gold-txt)}
+.empty{font-size:13px;color:var(--body);background:#fff;border-radius:12px;padding:14px;text-align:center;box-shadow:inset 0 0 0 1px rgba(235,195,101,.5)}
+.tot{display:flex;justify-content:space-between;font-size:12px;color:var(--body);margin-top:10px}
+#app[hidden]{display:none}
+.nf2{margin:40px auto 0;max-width:380px;text-align:center;font-size:14px;color:var(--body);border:1px solid rgba(235,195,101,.7);border-radius:12px;padding:16px;background:#fff}
+.nf2 b{display:block;color:var(--ink);margin-bottom:6px;font-size:15px}
+.tier{display:inline-block;margin-top:6px;font-size:10px;letter-spacing:.2em;color:var(--gold-txt);font-weight:600;text-transform:uppercase}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="top"><b>Mei Yuan · Khidmat Rias Kuku</b><span>G-37 Galaxy Ampang</span></div>
+  <div id="msg" class="nf2" hidden></div>
+
+  <div id="app" hidden>
+  <div class="eyebrow">Digital member card</div>
+  <h1>Gold Membership</h1>
+  <div class="sub" id="sub"></div>
+
+  <div class="stage">
+    <div class="card" id="card" role="button" tabindex="0" aria-label="Gold Membership card. Tap to flip.">
+      <div class="face front"><div class="in">
+        <div class="row"><img class="logo" alt="Mei Yuan" src="assets/mei-yuan-wordmark.png"><div class="tag">GOLD MEMBERSHIP</div></div>
+        <div class="amt" id="f-bal"></div><div class="amt-l">BALANCE LEFT</div>
+        <div class="rule"></div>
+        <div class="row"><div><div class="name" id="f-name"></div><div class="num" id="f-num"></div></div>
+          <div class="r"><div class="lbl">Valid to</div><div class="val" id="f-exp"></div></div></div>
+      </div></div>
+      <div class="face back"><div class="in">
+        <div class="row"><div><div class="lbl">Issued</div><div class="val" id="b-iss"></div></div>
+          <div class="r"><div class="lbl">Expires</div><div class="val" id="b-exp"></div></div></div>
+        <img class="sig" alt="Owner signature" src="assets/owner-signature.png">
+        <div class="sigline"></div>
+        <div class="owner">Chris Chan, Owner<small>MEI YUAN KHIDMAT RIAS KUKU</small></div>
+        <div class="shop"><b>Mei Yuan Khidmat Rias Kuku</b> (SSM 002777671-K)</div>
+      </div></div>
+    </div>
+  </div>
+  <div class="hint">Tap the card to flip · <button id="flip" type="button">Show other side</button></div>
+
+  <section class="bal" aria-label="Balance">
+    <div><div class="k">Balance left</div><div class="big" id="bal"></div></div>
+    <div class="of" id="of"></div>
+    <div class="bar"><i id="bar" style="width:0"></i></div>
+    <div class="exp" id="expl"></div>
+  </section>
+
+  <section class="sec">
+    <div class="k">Your visits</div>
+    <div id="visits"></div>
+    <div class="tot" id="tot"></div>
+  </section>
+
+  <a class="rcpt" id="rcpt" href="#" target="_blank" rel="noopener" hidden>View receipt</a>
+
+  <a class="wa" href="https://wa.me/60183583767" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>
+    Book on WhatsApp · +60 18-358 3767</a>
+
+  <section class="sec grid">
+    <div><div class="k">Visit us</div><p><span class="strong">G-37, Ground Floor</span><br>Galaxy Ampang Shopping Centre<br>Jalan Dagang 5, Taman Dagang<br>68000 Ampang, Selangor</p></div>
+    <div><div class="k">Hours</div><p><span class="strong">Daily</span><br>10:30am – 9:00pm</p></div>
+  </section>
+
+  <section class="sec">
+    <div class="k">Simple terms</div>
+    <ul id="terms"></ul>
+  </section>
+
+  <p class="thanks">Thank you for being part<br>of the Mei Yuan family.</p>
+  <div class="foot">Mei Yuan Khidmat Rias Kuku (SSM 002777671-K)<br>Visits are recorded by the shop. Questions? WhatsApp us.</div>
+  </div>
+</main>
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  const rm = n => 'RM' + Number(n).toLocaleString('en-MY', {minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2});
+  const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const fmt = d => d.split('-').reverse().join('/');
+  const long = d => { const [y,m,x] = d.split('-').map(Number); return x + ' ' + MON[m-1] + ' ' + y; };
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const msg = (t, b) => { const e = $('msg'); e.innerHTML = '<b>' + t + '</b>' + b; e.hidden = false; };
+
+  const q = (new URLSearchParams(location.search).get('m') || '').trim().toUpperCase();
+  let id = q;
+  try { if (id) localStorage.setItem('meiyuan-member', id); else id = localStorage.getItem('meiyuan-member') || ''; } catch (e) {}
+  if (!id) { msg('Open your personal link', 'Use the link the shop sent you. It has your member number in it.'); return; }
+
+  fetch('members.json', {cache: 'no-cache'}).then(r => { if (!r.ok) throw 0; return r.json(); }).then(db => {
+    const m = (db.members || []).find(x => String(x.id).toUpperCase() === id);
+    if (!m) { msg('Member not found', 'Please check your link, or WhatsApp us.'); return; }
+    const used = m.visits.reduce((a, v) => a + Number(v.amount), 0);
+    const left = Math.round((m.credit - used) * 100) / 100;
+    const today = new Date().toISOString().slice(0, 10);
+    const expired = today > m.expires;
+    $('sub').textContent = rm(m.paid) + ' membership · ' + rm(m.credit) + ' credit';
+    $('f-bal').textContent = rm(left);
+    $('f-name').textContent = m.name.toUpperCase(); $('f-num').textContent = m.id;
+    $('f-exp').textContent = fmt(m.expires); $('b-iss').textContent = fmt(m.issued); $('b-exp').textContent = fmt(m.expires);
+    $('bal').innerHTML = '<small></small>' + rm(left);
+    $('of').innerHTML = 'of ' + rm(m.credit) + '<br>' + rm(used) + ' used';
+    $('bar').style.width = Math.max(0, Math.min(100, left / m.credit * 100)) + '%';
+    const el = $('expl'); el.className = 'exp' + (expired ? ' warn' : '');
+    el.innerHTML = expired ? 'Expired on <b>' + long(m.expires) + '</b>. Please speak to us.' : 'Valid until <b>' + long(m.expires) + '</b>';
+    const vs = m.visits.slice().sort((a, b) => b.date.localeCompare(a.date));
+    $('visits').innerHTML = vs.length ? vs.map(v => '<div class="v"><div><div class="d">' + fmt(v.date) + '</div><div class="s">' + esc(v.service) + '</div></div><div class="a">' + rm(v.amount) + '</div></div>').join('')
+      : '<div class="empty">No visits yet. Your first visit will show here.</div>';
+    $('tot').innerHTML = vs.length ? '<span>' + vs.length + ' visit' + (vs.length > 1 ? 's' : '') + '</span><span>Total used ' + rm(used) + '</span>' : '';
+    $('terms').innerHTML = [
+      'Pay ' + rm(m.paid) + ' once, get ' + rm(m.credit) + ' to spend on services.',
+      'Use it within 2 years.',
+      'For you only.',
+      'No cash refund.',
+      'Show your card or link when you pay.'
+    ].map(t => '<li>' + t + '</li>').join('');
+    if (m.receipt) fetch(m.receipt, {method: 'HEAD', cache: 'no-cache'}).then(r => { if (r.ok) { $('rcpt').href = m.receipt; $('rcpt').hidden = false; } }).catch(() => {});
+    document.title = m.name + ' · Gold Membership · Mei Yuan';
+    $('app').hidden = false;
+  }).catch(() => msg('Can’t load your card', 'Check your internet and try again, or WhatsApp us.'));
+
+  const c = $('card'), t = () => c.classList.toggle('flipped');
+  c.addEventListener('click', t);
+  c.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); t(); } });
+  $('flip').addEventListener('click', t);
+  if ('serviceWorker' in navigator) addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+})();
+</script>
+</body>
+</html>

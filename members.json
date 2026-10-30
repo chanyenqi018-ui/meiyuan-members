@@ -1,0 +1,16 @@
+{
+  "members": [
+    {
+      "id": "MY-G5833",
+      "name": "Sarah Lim",
+      "tier": "Gold 600",
+      "paid": 600,
+      "credit": 620,
+      "issued": "2026-10-30",
+      "expires": "2028-10-30",
+      "receipt": "receipts/MY-G5833.pdf",
+      "visits": [
+      ]
+    }
+  ]
+}
